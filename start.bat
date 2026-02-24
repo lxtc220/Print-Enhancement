@@ -1,4 +1,5 @@
 @echo off
+chcp 65001 >nul
 echo 启动PDF黑白打印优化工具...
 echo.
 

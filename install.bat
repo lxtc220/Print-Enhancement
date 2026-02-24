@@ -1,4 +1,5 @@
 @echo off
+chcp 65001 >nul
 echo 正在安装PDF黑白打印优化工具的依赖包...
 echo.
 

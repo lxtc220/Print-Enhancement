@@ -14,33 +14,14 @@ if %errorlevel% neq 0 (
 echo 检测到Python已安装
 python --version
 
-REM 检查虚拟环境是否存在
-if not exist "black_white_env" (
-    echo.
-    echo 正在创建虚拟环境...
-    python -m venv black_white_env
-    if %errorlevel% neq 0 (
-        echo 错误: 创建虚拟环境失败
-        pause
-        exit /b 1
-    )
-    echo 虚拟环境创建成功
-) else (
-    echo 虚拟环境已存在
-)
-
-REM 激活虚拟环境并安装依赖
-echo.
-echo 正在激活虚拟环境并安装依赖包...
-call black_white_env\Scripts\activate.bat
-
 REM 升级pip
-echo 升级pip...
+echo.
+echo 正在升级pip...
 python -m pip install --upgrade pip
 
 REM 安装依赖
 echo.
-echo 安装依赖包...
+echo 正在安装依赖包...
 pip install -r requirements.txt
 
 if %errorlevel% neq 0 (
@@ -56,8 +37,7 @@ echo.
 echo 依赖包安装完成！
 echo.
 echo 使用方法:
-echo 1. 运行 black_white_env\Scripts\activate.bat 激活虚拟环境
-echo 2. 运行 python modern_pdf_processor_gui.py 启动程序
+echo 运行 python modern_pdf_processor_gui.py 启动程序
 echo.
 echo 或者直接运行 start.bat 启动程序
 echo.
